@@ -40,8 +40,8 @@ Good luck!*
 
 #**ULTIMATELY this is a tidy data set as it meets the principles of tidy data noted below:**
 
-1 - Avewear has headings to indicate which columns contain which data
-2 - All of the measurement variables are in separate columns and the subject and activity label correspond to each row
-3 - Each row contains one and only one observation
-4 - There are no duplicate columns with the same variable or variable name
+1. Avewear has headings to indicate which columns contain which data
+2. All of the measurement variables are in separate columns and the subject and activity label correspond to each row
+3. Each row contains one and only one observation
+4. There are no duplicate columns with the same variable or variable name
 
