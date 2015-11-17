@@ -37,3 +37,11 @@ Fifth: The dplyr package is used to select out only the mean and standard deviat
 Sixth: The Activityclass column-variable has been a code number all this time but it needs to be changed to the corresponding label to be tidy. The labels are referenced to the code numbers in a file called activity_label.txt. This file is read into R with read.table so the V1 column is the number and the V2 column is the label (i.e. walking, sitting, standing,etc.) The wearstat$Activityclass variable in each row (currently a code number) is replaced with the activity label using a match command within a subset of the activity label table to replace the code number with the activity label.
 
 Seventh: Finally, the final dataset is required to be a grouped dataset with one row for each of the subject-activity label combinations in the dataset providing the average (or mean) of each set of measurements for this combination. Since there are 30 subjects and 6 activities that were measured, the final dataset (avewear) must have 180 rows. The wearstat database is first ordered by subject and activity label to make it tidy and easy to read for the end user by using the arrange function from dplyr to create an ordered wearstat dataset called ordwear. This dataset is then grouped by Subject and then Activity label (using the dplyr group_by function) and then each measurement column is summarised (using the summarise_each function in dplyr) requiring each set of grouped observations to have an average computed(the mean) for all columns that "contains" the string "mean" or "std".  The contain function is used to choose these columns since there are 86 of these columns in the dataset and this is the shortest way to define this list of columns-measurements.
+
+ULTIMATELY this is a tidy data set as it meets the principles of tidy data noted below:
+
+1 - Avewear has headings to indicate which columns contain which data
+2 - All of the measurement variables are in separate columns and the subject and activity label correspond to each row
+3 - Each row contains one and only one observation
+4 - There are no duplicate columns with the same variable or variable name
+
